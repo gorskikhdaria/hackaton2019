@@ -18,6 +18,34 @@ export class MainComponent extends React.Component {
   };
 
   render() {
+    const events = [
+      {
+        description: 'Онлайн-курс по архитектуре MVVM под iOS на Swift',
+        date: '08 апреля',
+        place: 'Онлайн'
+      },
+      {
+        description: 'Митап в Точке «iOS the best»',
+        date: '12 апреля',
+        place: 'Демо-зал'
+      },
+      {
+        description: 'Обучение по холакратии',
+        date: '20 апреля',
+        place: 'Демо-зал'
+      },
+      {
+        description: 'Тренинг: «Разработка, анимация, размещение в App Store»',
+        date: '13 мая',
+        place: 'Москва'
+      },
+      {
+        description: 'Обучение по безопасности',
+        date: '25 мая',
+        place: 'Венский дом'
+      }
+    ];
+
     const focuses = [
       {
         name: 'Языки и фреймворки',
@@ -113,12 +141,12 @@ export class MainComponent extends React.Component {
           </Modal>
 
           <div className='widget widget-half--item' onClick={() => this.setState({isEventsModalOpened: true})}>
-            <EventsWidgetComponent />
+            <EventsWidgetComponent events={events}/>
           </div>
           <Modal
             style={modalStyles}
             isOpen={this.state.isEventsModalOpened}>
-            <EventsModalComponent onClose={() => this.setState({isEventsModalOpened: false})}/>
+            <EventsModalComponent events={events} onClose={() => this.setState({isEventsModalOpened: false})}/>
           </Modal>
 
         </div>

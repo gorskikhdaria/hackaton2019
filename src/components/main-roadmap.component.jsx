@@ -1,9 +1,65 @@
 import React from 'react';
+import Modal from "react-modal";
+import {AchieveModalComponent} from "./modals/achieve-modal.component";
 
 export class MainRoadMapComponent extends React.Component {
-  // state = {
-  //   hover: false
-  // };
+  state = {
+    isModalOpened: false,
+    content: <></>
+  };
+
+  contentMap = [
+    {
+      title: 'Пройден продвинутый курс по Swift ',
+      focus: 'Языки и фреймворки',
+      smile: '1',
+      desc: 'Месячный онлайн-курс по архитектуре MVVM под iOS на Swift.',
+      link: 'Записаться сейчас '
+    },
+    {
+      title: 'Создать курс для Junior-разработчиков',
+      focus: 'Комьюнити',
+      smile: '2',
+      desc: 'Выбери тему об особенностях процесса разработки приложения Точки, которую сможешь раскрыть новичкам за несколько занятий, подготовь план и сделай курс. ',
+      link: 'Создаем свой курс по разработке'
+    },
+    {
+      title: 'Публичные выступления',
+      focus: 'Доклад на внешней конференции',
+      smile: '3',
+      desc: 'Просто мы очень любим, когда наши разработчики начинают передавать свои знания наружу. ',
+      link: 'Как стать докладчиком'
+    },
+    {
+      title: 'Доклад на внутренних митапах ',
+      focus: 'Публичные выступления',
+      smile: '4',
+      desc: 'Раскачивая внутренние митапы, ты вкладываешься не только в разработчиков, но и других представителей ИТ-комьюнити Точки. ',
+      link: 'Как стать докладчиков в Точке'
+    },
+    {
+      title: 'Закрыто 80% личного техдолга',
+      focus: 'Продукт',
+      smile: '5',
+      desc: 'Будь героем — не тащи за собой техдолг, чтобы двигаться дальше без стоп-факторов',
+      link: 'Курс: как не накапливать техдолг в большой команде'
+    },
+    {
+      title: 'Выпущен в продакшн полноценный сервис',
+      focus: 'Продукт',
+      smile: '6',
+      desc: 'Здорово, что ты собрался сам отвечать за целый набор функций приложения! ',
+      link: 'Как проектировать на века'
+    }
+  ];
+
+  setContent = (index) => {
+    console.log(index);
+    this.setState({
+      isModalOpened: true,
+      content: this.contentMap[index]
+    })
+  };
 
   render() {
     return (
@@ -14,37 +70,37 @@ export class MainRoadMapComponent extends React.Component {
 
         <div style={lineVioletStyles}></div>
 
-        <div style={circleVioletStyles}>
+        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 0)}>
           <div style={{position: 'absolute', bottom: '-55px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Знаешь Swift</div>
         </div>
 
         <div style={lineVioletStyles}></div>
 
-        <div style={circleVioletStyles}>
+        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 1)}>
           <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Курс джунам</div>
         </div>
 
         <div style={lineVioletStyles}></div>
 
-        <div style={circleVioletStyles}>
+        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 2)}>
           <div style={{position: 'absolute', bottom: '-55px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Твой доклад!</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles}>
+        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 3)}>
           <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Звезда митапов</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles}>
+        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 4)}>
           <div style={{position: 'absolute', bottom: '-55px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Без техдолгов</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles}>
+        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 5)}>
           <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Твой раздел!</div>
         </div>
 
@@ -53,6 +109,12 @@ export class MainRoadMapComponent extends React.Component {
         <div style={circleGrayLastStyles}>
           <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>360 май</div>
         </div>
+
+        <Modal
+          style={modalStyles}
+          isOpen={this.state.isModalOpened}>
+          <AchieveModalComponent onClose={() => this.setState({isModalOpened: false})} content={this.state.content}/>
+        </Modal>
       </div>
     );
   }
@@ -72,11 +134,6 @@ const circleVioletFirstStyles = {
   position: 'relative',
   top: '4px'
 };
-
-// const hovered = {
-//   height: '35px',
-//   width: '35px',
-// };
 
 const circleVioletStyles = {
   height: '20px',
@@ -125,5 +182,16 @@ const lineGrayStyles = {
   display: 'inline-block',
   position: 'relative',
   bottom: '7px'
+};
+
+
+const modalStyles = {
+  content:{
+    width: '500px',
+    boxShadow: '0 3px 38px #cbcaca, 0 0px 12px #cbcaca',
+    borderRadius: '3px',
+    borderWidth: '0',
+    maxWidth: '500px'
+  }
 };
 

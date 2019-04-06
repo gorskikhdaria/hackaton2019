@@ -3,28 +3,6 @@ import React from 'react';
 
 export class EventsModalComponent extends React.Component {
   render() {
-    const events = [
-      {
-        description: 'Митап',
-        date: '20.04.2019'
-      },
-      {
-        description: 'Митап',
-        date: '20.04.2019'
-      },
-      {
-        description: 'Митап',
-        date: '20.04.2019'
-      },
-      {
-        description: 'Митап',
-        date: '20.04.2019'
-      },
-      {
-        description: 'Митап',
-        date: '20.04.2019'
-      }
-    ];
 
     return (
       <div style={styles}>
@@ -39,11 +17,23 @@ export class EventsModalComponent extends React.Component {
         <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
           События
         </div>
+
+        <div className='margin text--align--left'>
+          В ленте событий будут появляться анонсы предстоящих мероприятий по твоей роли в сообществе: митапов,
+          курсов, тренингов и других образовательных движух в Точке и за её пределами.
+        </div>
+
         <div className='margin'>
-          { events.map((event, index) => (
-            <div className='margin-small widget-half' key={index}>
-              <span>{event.description}</span>
-              <span>{event.date}</span>
+          { this.props.events.map((event, index) => (
+            <div className='margin' key={index}>
+              <div style={{color: '#a3a2a2'}}>{event.date}</div>
+              <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <span style={{fontWeight: '600'}}>{event.description}</span>
+                <button className="tui-button tui-button--view--secondary tui-button--size--xs" onClick={this.openModal}>
+                  Добавить в календарь
+                </button>
+              </div>
+              <div style={{}}>Место: {event.place}</div>
             </div>
           ))}
         </div>

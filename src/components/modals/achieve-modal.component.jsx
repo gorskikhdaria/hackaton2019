@@ -1,14 +1,10 @@
 import React from 'react';
 
 
-export class ArticlesModalComponent extends React.Component {
-  render() {
-    const articles = [
-      {
-        description: 'Очень интересная статья'
-      }
-    ];
+export class AchieveModalComponent extends React.Component {
 
+  render() {
+    const { content } = this.props;
     return (
       <div style={styles}>
         <div onClick={() => this.props.onClose()} style={closeStyles}>
@@ -19,23 +15,23 @@ export class ArticlesModalComponent extends React.Component {
           </svg>
         </div>
 
-        <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
-          Публикации
+        <div className='text--align--center'>
+          <div className='text text--size--2xl text--view--primary text--type--anglecia' style={{marginBottom: '10px'}}>
+            {content.title}
+          </div>
+          <div className='text text--size--xl text--view--primary text--type--anglecia margin'>{content.focus}</div>
+          <img style={{width: '60px', marginBottom: '20px'}} src={`imgs/smile-${content.smile}.png`} />
+          <div style={{marginBottom: '10px'}}>{content.desc}</div>
+          <div style={{textDecoration: 'underline'}}>{content.link}</div>
         </div>
-        <div className='margin'>
-          { articles.map((article, index) => (
-            <div className='margin-small widget-half' key={index}>
-              <span>{article.description}</span>
-            </div>
-          ))}
-        </div>
+
       </div>
     );
   }
 }
 
 const styles = {
-  padding: '20px 40px',
+  padding: '40px 40px',
   position: 'relative'
 };
 

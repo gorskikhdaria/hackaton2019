@@ -30,7 +30,7 @@ export class FocusModalComponent extends React.Component {
                 </div>
                 <div className='margin-small'>
                   {focus.achieves.map((achieve, index) => (
-                    <div>
+                    <div key={index}>
                       { achieve.done && <div style={done}>
                         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><defs><style></style></defs><path d="M24.9,4.5,12.3,17.86,5.1,10.23,1.5,14,12.3,25.5,28.5,8.32Z"/></svg>
                       </div>}
