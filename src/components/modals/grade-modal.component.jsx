@@ -39,6 +39,11 @@ export class GradeModalComponent extends React.Component {
           Грейды
         </div>
 
+        <div>
+          Здесь ты можешь посмотреть, каким мы видим мобильного разработчика Точки и его скиллы в разных грейдах.
+          Нажми на грейд, чтобы увидеть подробное описание и понять, чего ждать на следущем уровне.
+        </div>
+
         <GradeRoadMapComponent onSwitch={(current) => this.setState({ current })}/>
 
         {this.renderSwitch()}
