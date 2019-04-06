@@ -3,52 +3,7 @@ import React from 'react';
 
 export class FocusWidgetComponent extends React.Component {
   render() {
-    const focuses = [
-      {
-        name: 'Языки и фреймворки',
-        achieves: [
-          {
-            name: 'Пройден продвинутый курс по Swift',
-            done: true
-          }
-        ]
-      },
-      {
-        name: 'Комьюнити',
-        achieves: [
-          {
-            name: 'Создать обучающий курс',
-            done: false
-          }
-        ]
-      },
-      {
-        name: 'Публичные выступления',
-        achieves: [{
-            name: 'Прочтён доклад на внешней конференции',
-            done: true
-          },
-          {
-            name: 'Прочтён доклад на внутренних митапах',
-            done: false
-          }
-        ]
-      },
-      {
-        name: 'Продукт',
-        achieves: [
-          {
-            name: 'Закрыто 80% техдолга',
-            done: true
-          },
-          {
-            name: 'Выпущен в продакшн полноценный сервис',
-            done: false
-          }
-        ],
-        done: false
-      }
-    ];
+
     return (
       <div className=''>
         <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
@@ -60,7 +15,7 @@ export class FocusWidgetComponent extends React.Component {
           <div style={column}>Достижения</div>
         </div>
         <div>
-          { focuses.map((focus, index) => (
+          { this.props.focuses.map((focus, index) => (
             <div style={row} className='' key={index}>
               <div style={column}>{focus.name}</div>
               <div>

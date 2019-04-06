@@ -18,6 +18,57 @@ export class MainComponent extends React.Component {
   };
 
   render() {
+    const focuses = [
+      {
+        name: 'Языки и фреймворки',
+        description: 'Для достижения уровня Senior ты должен постоянно погружаться глубже в специфику своего стека.',
+        achieves: [
+          {
+            name: 'Пройден продвинутый курс по Swift',
+            done: true
+          }
+        ]
+      },
+      {
+        name: 'Комьюнити',
+        description: 'Чем выше уровень, тем важнее передавать знания и опыт в сообщество, развивать его и обучать его участников.',
+        achieves: [
+          {
+            name: 'Создать обучающий курс',
+            done: false
+          }
+        ]
+      },
+      {
+        name: 'Публичные выступления',
+        description: 'Круто, если ты готов прокачать свой навык публичных выступлений — загляни в хранилище информации, там есть всё, что для этого нужно.',
+        achieves: [{
+          name: 'Прочтён доклад на внешней конференции',
+          done: true
+        },
+          {
+            name: 'Прочтён доклад на внутренних митапах',
+            done: false
+          }
+        ]
+      },
+      {
+        name: 'Продукт',
+        description: 'Фокусировка на продукте поможет тебе ещё больше влиять на разработку и результаты всей Точки, а значит — быстрее двигаться к следующему грейду.',
+        achieves: [
+          {
+            name: 'Закрыто 80% техдолга',
+            done: true
+          },
+          {
+            name: 'Выпущен в продакшн полноценный сервис',
+            done: false
+          }
+        ],
+        done: false
+      }
+    ];
+
     return (
       <div>
         <div className='margin'>
@@ -42,12 +93,12 @@ export class MainComponent extends React.Component {
         </div>
 
         <div className='widget' onClick={() => this.setState({isFocusModalOpened: true})}>
-          <FocusWidgetComponent />
+          <FocusWidgetComponent focuses={focuses}/>
         </div>
         <Modal
           style={modalStyles}
           isOpen={this.state.isFocusModalOpened}>
-          <FocusModalComponent onClose={() => this.setState({isFocusModalOpened: false})}/>
+          <FocusModalComponent focuses={focuses} onClose={() => this.setState({isFocusModalOpened: false})}/>
         </Modal>
 
         <div className='widget-half'>

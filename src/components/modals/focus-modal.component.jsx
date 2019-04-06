@@ -4,23 +4,6 @@ import React from 'react';
 export class FocusModalComponent extends React.Component {
 
   render() {
-    const focuses = [
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      }
-    ];
     return (
       <div style={styles}>
         <div onClick={() => this.props.onClose()} style={closeStyles}>
@@ -30,15 +13,34 @@ export class FocusModalComponent extends React.Component {
             </g>
           </svg>
         </div>
-        <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
-          Фокусы
-        </div>
-        <div className='margin'>
-          { focuses.map((focus, index) => (
-            <div className='margin-small widget-half' key={index}>
-              <span>{focus.description}</span>
-            </div>
-          ))}
+
+        <div className=''>
+          <div className='text text--size--3xl text--view--primary text--align--left text--type--anglecia margin'>
+            Фокусы и достижения
+          </div>
+
+          <div>
+            { this.props.focuses.map((focus, index) => (
+              <div style={{marginBottom: '40px'}} className='' key={index}>
+                <div className='text text--size--2xl text--type--anglecia '>{focus.name}</div>
+                <div className='margin-small'>{focus.description}</div>
+
+                <div className='text text--size--l text--view--primary text--align--left text--type--anglecia'>
+                  Достижения
+                </div>
+                <div className='margin-small'>
+                  {focus.achieves.map((achieve, index) => (
+                    <div>
+                      { achieve.done && <div style={done}>
+                        <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><defs><style></style></defs><path d="M24.9,4.5,12.3,17.86,5.1,10.23,1.5,14,12.3,25.5,28.5,8.32Z"/></svg>
+                      </div>}
+                      <span key={index} style={achieve.done ? achieved : {}}>{achieve.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     );
@@ -55,4 +57,16 @@ const closeStyles = {
   top: '10px',
   right: '40px',
   cursor: 'pointer'
+};
+
+const achieved = {
+  color: 'rgb(118, 88, 224)',
+  fontWeight: '500'
+};
+
+const done = {
+  width: '10px',
+  height: '10px',
+  display: 'inline-block',
+  marginRight: '10px'
 };
