@@ -1,27 +1,30 @@
 import React from 'react';
 import {GradeRoadMapComponent} from "./grade-roadmap.component";
+import {JuniorDescriptionComponent} from "../grade-descriptions.component/junior-description.component";
+import {MiddleDescriptionComponent} from "../grade-descriptions.component/middle-description.component";
+import {SeniorDescriptionComponent} from "../grade-descriptions.component/senior-description.component";
+import {ArchDescriptionComponent} from "../grade-descriptions.component/arch-description.component";
+import {TeamLeadDescriptionComponent} from "../grade-descriptions.component/team-lead-description.component";
 
 
 export class GradeModalComponent extends React.Component {
 
+  state = {
+    current: 'middle'
+  };
+
+  renderSwitch() {
+    switch(this.state.current) {
+      case 'junior': return <JuniorDescriptionComponent/>;
+      case 'middle': return <MiddleDescriptionComponent/>;
+      case 'senior': return <SeniorDescriptionComponent/>;
+      case 'arch': return <ArchDescriptionComponent/>;
+      case 'teamlead': return <TeamLeadDescriptionComponent/>;
+      default: return <MiddleDescriptionComponent/>
+    }
+  }
+
   render() {
-    const focuses = [
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      },
-      {
-        description: 'Пройти продвинутый курс по Kotlin'
-      }
-    ];
     return (
       <div style={styles}>
         <div onClick={() => this.props.onClose()} style={closeStyles}>
@@ -32,26 +35,21 @@ export class GradeModalComponent extends React.Component {
           </svg>
         </div>
 
-        <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
+        <div className='text text--size--3xl text--view--primary text--align--left text--type--anglecia margin'>
           Грейды
         </div>
 
-        <GradeRoadMapComponent/>
+        <GradeRoadMapComponent onSwitch={(current) => this.setState({ current })}/>
 
-        <div className='magrin'>
-          { focuses.map((focus, index) => (
-            <div className='magrin-small widget-half' key={index}>
-              <span>{focus.description}</span>
-            </div>
-          ))}
-        </div>
+        {this.renderSwitch()}
+
       </div>
     );
   }
 }
 
 const styles = {
-  padding: '20px 40px',
+  padding: '20px 50px',
   position: 'relative'
 };
 

@@ -4,26 +4,26 @@ export class GradeRoadMapComponent extends React.Component {
   render() {
     return (
       <div style={styles}>
-        <div style={circleVioletStyles}>
+        <div style={circleVioletStyles} onClick={() => this.props.onSwitch('junior')}>
           <div style={label}>Junior</div>
         </div>
 
         <div style={lineVioletStyles}></div>
 
-        <div style={circleVioletStyles}>
+        <div style={circleVioletStyles} onClick={() => this.props.onSwitch('middle')}>
           <div style={label}>Middle</div>
         </div>
 
-        <div style={lineVioletStyles}></div>
+        <div style={lineGrayStyles}></div>
 
-        <div style={circleVioletStyles}>
+        <div style={circleGrayStyles} onClick={() => this.props.onSwitch('senior')}>
           <div style={label}>Senior</div>
         </div>
         <div style={verticalLine}></div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles}>
+        <div style={circleGrayStyles} onClick={() => this.props.onSwitch('arch')}>
           <div style={label}>Architector</div>
         </div>
 
@@ -31,7 +31,7 @@ export class GradeRoadMapComponent extends React.Component {
 
           <div style={lineGrayStyles}></div>
 
-          <div style={circleGrayStyles}>
+          <div style={circleGrayStyles} onClick={() => this.props.onSwitch('teamlead')}>
             <div style={label}>TeamLead</div>
           </div>
 
@@ -60,13 +60,13 @@ const verticalLine = {
   display: 'inline-block',
   position: 'absolute',
   top: '20px',
-  left: '289px'
+  left: '409px'
 };
 
 const lastPoint = {
   position: 'absolute',
   top: '67px',
-  left: '290px'
+  left: '412px'
 };
 
 const circleVioletStyles = {
@@ -81,7 +81,7 @@ const circleVioletStyles = {
 
 const lineVioletStyles = {
   height: '3px',
-  width: '120px',
+  width: '180px',
   backgroundColor: '#7658e0',
   display: 'inline-block',
   position: 'relative',
@@ -100,7 +100,7 @@ const circleGrayStyles = {
 
 const lineGrayStyles = {
   height: '3px',
-  width: '120px',
+  width: '180px',
   backgroundColor: '#cbcaca',
   display: 'inline-block',
   position: 'relative',
