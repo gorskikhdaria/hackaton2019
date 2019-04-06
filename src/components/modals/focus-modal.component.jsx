@@ -33,9 +33,9 @@ export class FocusModalComponent extends React.Component {
         <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
           Фокусы
         </div>
-        <div className='magrin'>
+        <div className='margin'>
           { focuses.map((focus, index) => (
-            <div className='magrin-small widget-half' key={index}>
+            <div className='margin-small widget-half' key={index}>
               <span>{focus.description}</span>
             </div>
           ))}

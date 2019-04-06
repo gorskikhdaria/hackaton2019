@@ -39,9 +39,9 @@ export class EventsModalComponent extends React.Component {
         <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
           События
         </div>
-        <div className='magrin'>
+        <div className='margin'>
           { events.map((event, index) => (
-            <div className='magrin-small widget-half' key={index}>
+            <div className='margin-small widget-half' key={index}>
               <span>{event.description}</span>
               <span>{event.date}</span>
             </div>

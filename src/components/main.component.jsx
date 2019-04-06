@@ -21,10 +21,15 @@ export class MainComponent extends React.Component {
     return (
       <div>
         <div className='margin'>
-          <div className='text text--size--5xl text--view--primary text--align--left text--type--anglecia'>Тони Старк</div>
-          <a className='status' onClick={() => this.setState({isGradeModalOpened: true})}>
-            Middle Mobile Developer
-          </a>
+          <div>
+            <img style={imageStyle} src='imgs/toni.png' />
+            <div style={{display: 'inline-block'}}>
+              <div className='text text--size--5xl text--view--primary text--align--left text--type--anglecia'>Тони Старк</div>
+              <a className='status' onClick={() => this.setState({isGradeModalOpened: true})}>
+                Middle Mobile Developer
+              </a>
+            </div>
+          </div>
           <Modal
             style={modalStyles}
             isOpen={this.state.isGradeModalOpened}>
@@ -80,4 +85,11 @@ const modalStyles = {
     borderWidth: '0',
     maxWidth: '1100px'
   }
+};
+
+const imageStyle = {
+  height: '90px',
+  width: '90px',
+  display: 'inline-block',
+  marginRight: '25px'
 };
