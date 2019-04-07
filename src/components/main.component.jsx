@@ -20,14 +20,19 @@ export class MainComponent extends React.Component {
   render() {
     const events = [
       {
-        description: 'Онлайн-курс по архитектуре MVVM под iOS на Swift',
+        description: 'Кайдзен Хакатон',
+        date: '06 апреля',
+        place: 'Демо-зал'
+      },
+      {
+        description: 'Продвинутый курс по Swift «Пользовательский интерфейс iOS-приложений»',
         date: '08 апреля',
         place: 'Онлайн'
       },
       {
-        description: 'Митап в Точке «iOS the best»',
-        date: '12 апреля',
-        place: 'Демо-зал'
+        description: 'DUMP!',
+        date: '19 апреля',
+        place: 'Екатеринбург-ЭКСПО'
       },
       {
         description: 'Обучение по холакратии',
@@ -35,14 +40,9 @@ export class MainComponent extends React.Component {
         place: 'Демо-зал'
       },
       {
-        description: 'Тренинг: «Разработка, анимация, размещение в App Store»',
-        date: '13 мая',
-        place: 'Москва'
-      },
-      {
         description: 'Обучение по безопасности',
         date: '25 мая',
-        place: 'Венский дом'
+        place: 'Демо-зал'
       }
     ];
 

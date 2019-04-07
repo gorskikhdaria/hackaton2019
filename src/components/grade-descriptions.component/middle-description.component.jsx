@@ -6,7 +6,7 @@ export class MiddleDescriptionComponent extends React.Component {
     return (
       <div>
         <div className='text text--size--2xl text--view--primary text--align--left text--type--anglecia margin'>
-          Middle Developer
+          Middle разработчик
         </div>
 
         <div style={paragraph}>

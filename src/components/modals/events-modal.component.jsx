@@ -28,7 +28,7 @@ export class EventsModalComponent extends React.Component {
             <div className='margin' key={index}>
               <div style={{color: '#a3a2a2'}}>{event.date}</div>
               <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                <span style={{fontWeight: '600'}}>{event.description}</span>
+                <span style={{fontWeight: '600', maxWidth: '500px'}}>{event.description}</span>
                 <button className="tui-button tui-button--view--secondary tui-button--size--xs" onClick={this.openModal}>
                   Добавить в календарь
                 </button>

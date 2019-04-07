@@ -16,7 +16,7 @@ export class FocusWidgetComponent extends React.Component {
         </div>
         <div>
           { this.props.focuses.map((focus, index) => (
-            <div style={row} className='' key={index}>
+            <div style={{}} className='focus-row' key={index}>
               <div style={column}>{focus.name}</div>
               <div>
                 {focus.achieves.map((achieve, index) => (
@@ -35,12 +35,6 @@ export class FocusWidgetComponent extends React.Component {
     );
   }
 }
-
-const row = {
-  display: 'flex',
-  padding: '10px 0',
-  borderBottom: '1px solid #f4f4f4'
-};
 
 const column = {
   width: '350px',

@@ -64,50 +64,52 @@ export class MainRoadMapComponent extends React.Component {
   render() {
     return (
       <div style={styles}>
-        <div style={circleVioletFirstStyles}>
-          <div style={{position: 'absolute', bottom: '35px', right: '-15px', fontWeight: '500', textAlign: 'center'}}>360 декабрь</div>
+        <a href="https://extranet.tochka.com/quiz/360/results/7070fa631148b47d7fd94938a73a89d6" target='_blank'>
+          <div style={circleVioletFirstStyles} className='roadmap-circle'>
+            <div style={{position: 'absolute', bottom: '35px', right: '-15px', fontWeight: '500', textAlign: 'center'}}>360 декабрь</div>
+          </div>
+        </a>
+
+        <div style={lineVioletStyles}></div>
+
+        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 0)} className='roadmap-circle'>
+          <div style={{position: 'absolute', bottom: '-55px', right: '-17px', textAlign: 'center', fontWeight: '500'}}>Знаешь Swift</div>
         </div>
 
         <div style={lineVioletStyles}></div>
 
-        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 0)}>
-          <div style={{position: 'absolute', bottom: '-55px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Знаешь Swift</div>
+        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 1)} className='roadmap-circle'>
+          <div style={{position: 'absolute', bottom: '35px', right: '-18px', textAlign: 'center', fontWeight: '500'}}>Курс джунам</div>
         </div>
 
         <div style={lineVioletStyles}></div>
 
-        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 1)}>
-          <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Курс джунам</div>
-        </div>
-
-        <div style={lineVioletStyles}></div>
-
-        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 2)}>
-          <div style={{position: 'absolute', bottom: '-55px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Твой доклад!</div>
+        <div style={circleVioletStyles} onClick={this.setContent.bind(this, 2)} className='roadmap-circle'>
+          <div style={{position: 'absolute', bottom: '-55px', right: '-20px', textAlign: 'center', fontWeight: '500'}}>Твой доклад</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 3)}>
-          <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Звезда митапов</div>
+        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 3)} className='roadmap-circle--gray'>
+          <div style={{position: 'absolute', bottom: '35px', right: '-20px', textAlign: 'center', fontWeight: '500'}}>Звезда митапов</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 4)}>
-          <div style={{position: 'absolute', bottom: '-55px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Без техдолгов</div>
+        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 4)} className='roadmap-circle--gray'>
+          <div style={{position: 'absolute', bottom: '-55px', right: '-23px', textAlign: 'center', fontWeight: '500'}}>Без техдолгов</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 5)}>
-          <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>Твой раздел!</div>
+        <div style={circleGrayStyles} onClick={this.setContent.bind(this, 5)} className='roadmap-circle--gray'>
+          <div style={{position: 'absolute', bottom: '35px', right: '-18px', textAlign: 'center', fontWeight: '500'}}>Твой сервис</div>
         </div>
 
         <div style={lineGrayStyles}></div>
 
-        <div style={circleGrayLastStyles}>
-          <div style={{position: 'absolute', bottom: '35px', right: '-15px', textAlign: 'center', fontWeight: '500'}}>360 май</div>
+        <div style={circleGrayLastStyles} className='roadmap-circle--gray'>
+          <div style={{position: 'absolute', bottom: '35px', right: '0px', textAlign: 'center', fontWeight: '500'}}>360 май</div>
         </div>
 
         <Modal
@@ -128,6 +130,7 @@ const circleVioletFirstStyles = {
   height: '30px',
   width: '30px',
   backgroundColor: '#7658e0',
+  color: '#7658e0',
   borderRadius: '50%',
   display: 'inline-block',
   cursor: 'pointer',
@@ -139,6 +142,7 @@ const circleVioletStyles = {
   height: '20px',
   width: '20px',
   backgroundColor: '#7658e0',
+  color: '#7658e0',
   borderRadius: '50%',
   display: 'inline-block',
   position: 'relative',
@@ -158,6 +162,7 @@ const circleGrayStyles = {
   height: '20px',
   width: '20px',
   backgroundColor: '#cbcaca',
+  color: '#cbcaca',
   borderRadius: '50%',
   display: 'inline-block',
   position: 'relative',
@@ -168,6 +173,7 @@ const circleGrayLastStyles = {
   height: '30px',
   width: '30px',
   backgroundColor: '#cbcaca',
+  color: '#cbcaca',
   borderRadius: '50%',
   display: 'inline-block',
   cursor: 'pointer',

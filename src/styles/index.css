@@ -86,6 +86,23 @@ a {
   cursor: pointer;
 }
 
+.roadmap-circle:hover {
+  box-shadow: 0 3px 38px rgb(118, 88, 224), 0 0px 20px rgb(118, 88, 224);
+}
+
+.roadmap-circle--gray:hover {
+  box-shadow: 0 3px 38px #cbcaca, 0 0px 20px #cbcaca;
+}
+
+.focus-row {
+  display: flex;
+  padding: 10px 0;
+}
+
+.focus-row:not(:last-child) {
+  border-bottom: 1px solid #f4f4f4;
+}
+
 .widget {
   margin: 0 0px 30px;
   padding: 30px;
