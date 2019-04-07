@@ -97,7 +97,7 @@ export class MainRoadMapComponent extends React.Component {
         <div style={lineGrayStyles}></div>
 
         <div style={circleGrayStyles} onClick={this.setContent.bind(this, 4)} className='roadmap-circle--gray'>
-          <div style={{position: 'absolute', bottom: '-55px', right: '-23px', textAlign: 'center', fontWeight: '500'}}>Без техдолгов</div>
+          <div style={{position: 'absolute', bottom: '-55px', right: '-28px', textAlign: 'center', fontWeight: '500'}}>Без техдолгов</div>
         </div>
 
         <div style={lineGrayStyles}></div>
@@ -197,7 +197,9 @@ const modalStyles = {
     boxShadow: '0 3px 38px #cbcaca, 0 0px 12px #cbcaca',
     borderRadius: '3px',
     borderWidth: '0',
-    maxWidth: '500px'
+    maxWidth: '500px',
+    maxHeight: '450px',
+    height: '450px'
   }
 };
 
